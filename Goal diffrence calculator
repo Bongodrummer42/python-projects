@@ -1,0 +1,6 @@
+hname =input("what is the home teams name")
+aname = input("away teamname is")
+ghome =int(input("home goals"))
+gaway =int(input("awaygoals"))
+gd =ghome-gaway
+print ("goal diffrence for" ,hname,"is",gd)
