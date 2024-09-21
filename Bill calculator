@@ -1,0 +1,8 @@
+amountOwedForMeal = float(input("what was the cost of your meal"))
+tipPercentage = float(input(" how much would you like to tip"))
+people = int(input("how many peope is there"))
+tip = (tipPercentage /  100)
+totalamount=amountOwedForMeal+(amountOwedForMeal*tip)
+pamount = (totalamount/people)
+print ("the bill is £",totalamount,".")
+print ("each person pays £",pamount)
