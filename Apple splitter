@@ -1,0 +1,5 @@
+#this piece of code asks user how many apolls they have and who they are splitting them between and uses the mod function
+numaples = int(input("how many"))
+people = int(input("how many"))
+remain = numaples%people
+print("you have",remain,"apples")
