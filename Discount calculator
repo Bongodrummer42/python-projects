@@ -1,0 +1,8 @@
+divpoint=0.0
+datapoint3=0.0
+datapoint1 = float(input("what is the price"))
+datapoint2 = float(input("what is the discount")) 
+divpoint = datapoint2 / 100 #this finds the amount thta they have off 100 percent
+divpoint = 1 - divpoint #this finds the remaining percentage 
+datapoint3 = datapoint1 * divpoint #this times the percenatage remainder of the orignal price by the orignal price to get the price with the discount applied
+print("your final price is ",datapoint3)
