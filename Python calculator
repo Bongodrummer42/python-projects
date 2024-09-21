@@ -1,0 +1,23 @@
+print ("1.add")
+print("2.subtract")
+print("3.divide")
+print("4.multiply")
+operation = int(input("what operation would you like to select"))
+num1 = float(input("kian, you muppet, what is your number"))
+num2 = float(input("what is your next number kian"))
+if operation == 1:
+    num3 = (num1 + num2)
+    print ("the answer is",num3)
+   
+    
+elif operation ==2:
+    num4 = (num1 - num2)
+    print("the answer is",num4)
+elif operation ==3:
+    num5 = (num1 / num2)
+    print("the answer is",num5)
+elif operation ==4:
+    num6 = (num1 * num2)
+    print("the answer is",num6)
+else:
+    print("there is an error")
