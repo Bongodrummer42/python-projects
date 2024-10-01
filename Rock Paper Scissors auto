@@ -1,0 +1,36 @@
+import random
+import time
+def game():
+   
+    
+    char = (1,2,3)
+    compchoice = random.choice (char)
+    userchoice = random.choice (char)
+    print ("i picked",compchoice)
+    print ("you picked",userchoice)
+    
+    
+    
+    
+    
+    if userchoice == compchoice:
+        print("it was a draw")
+              
+    if (userchoice +1)==compchoice:
+        
+        print("you lose")
+      
+        
+        
+        
+        
+    if (userchoice -1)==compchoice:
+        print("you win")
+         
+        
+        
+        
+        
+    if(compchoice -3)==(userchoice-1):
+        print ("you win")
+        
