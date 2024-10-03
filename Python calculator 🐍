@@ -1,0 +1,51 @@
+def addition():
+   num1 = float(input("What is the first number for addition: "))
+   num2 = float(input("What is the second number for addition: "))
+   num3 = num1 + num2
+   print("The result is:", num3)
+
+def subtraction():
+    num1 = float(input("What is the first number you want to subtract: "))
+    num2 = float(input("What is the second number you want to subtract: "))
+    num3 = num1 - num2
+    print("The result is:", num3)
+
+def multiplication():
+    num1 = float(input("What is the first number you wish to multiply: "))
+    num2 = float(input("What is the second number you wish to multiply: "))
+    num3 = num1 * num2
+    print("The result of the calculation is:", num3)
+
+def division():
+    num1 = float(input("What is the dividend: "))
+    num2 = float(input("What is the divisor: "))
+    if num2 != 0:
+        num3 = num1 / num2
+        print("The result of the division is:", num3)
+    else:
+        print("Division by zero is undefined!")
+
+def squaring():
+    num1 = float(input("Which number do you wish to square: "))
+    num2 = num1 * num1
+    print("The result of the calculation is:", num2)
+
+# Main program
+print("Welcome to the calculator")
+operation_selection = int(input("What operation would you like to select: 1/addition, 2/subtraction, 3/multiplication, 4/division, 5/square? "))
+
+if operation_selection == 1:
+    addition()
+elif operation_selection == 2:
+    subtraction()
+elif operation_selection == 3:
+    multiplication()
+elif operation_selection == 4:
+    division()
+elif operation_selection == 5:
+    squaring()
+else:
+    print("That's an invalid option.")
+
+
+
