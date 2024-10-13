@@ -1,0 +1,10 @@
+#result =len(name)        finds the length of the string returns that length including spaces first digit is 0
+#result = name.find(" ")  finds the first instance of character returns the position
+#result = name.rfind(" ") finds the last instance of a character returns position
+#result =name.upper()
+#result =name.lower()
+#result =name.title()
+#result =name.isdigit()   finds if the string contains only digits returns as boolean
+#result = name.isalpha()  this code returns a boolean based on if a character is only alphabetical spaces dont count
+#result = phone.count("-")
+# phone =phone.replace("-"," ")#replaces the first character in the brackets with the second one
