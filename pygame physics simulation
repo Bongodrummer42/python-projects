@@ -1,0 +1,69 @@
+import pygame
+import math
+
+pygame.init()
+g = 9.81
+fall_time = 0
+
+C_d = 1.0
+rho = 1.225
+width = 40
+height = 40
+A = (width * height) / 10000  # Area in square meters
+
+mass = 200  # Mass in kg
+
+# Calculate terminal velocity
+terminal_velocity = math.sqrt((2 * mass * g) / (C_d * rho * A))
+print(f"Terminal Velocity: {terminal_velocity:.2f} m/s")
+
+win = pygame.display.set_mode((500, 500))
+pygame.display.set_caption("Falling Cube")
+x = 50
+y = 0
+velocity = 0
+with open("data.txt", "w") as file:
+    file.write("fall data:\n")
+
+run = True
+while run:
+    pygame.time.delay(40)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+
+    if y < 460:
+        fall_time += 0.04
+
+        weight = mass * g
+
+        drag_force = 0.5 * C_d * rho * A * velocity ** 2
+        if velocity > 0:
+            drag_force = -drag_force  # Drag opposes the direction of motion
+
+        # Calculate net force (weight - drag)
+        net_force = weight + drag_force
+        acceleration = net_force / mass
+
+        # Update velocity and position
+        velocity += acceleration * 0.04
+        # Limit velocity to terminal velocity
+        if velocity > terminal_velocity:
+            velocity = terminal_velocity
+        position = y
+        y += velocity * 0.04
+        altitude = ((y-500)*-1)-height
+        if altitude < 0:
+            velocity = 0
+            position = 0
+            altitude = 0
+
+        print(f"Time: {fall_time:.2f} s, Position: {position:.2f} m, Velocity: {velocity:.2f} m/s   altitude: {altitude} m")
+        with open("data.txt","a") as file:
+            file.write(f"Time: {fall_time:.2f} s, Position: {position:.2f} m, Velocity: {velocity:.2f} m/s   altitude: {altitude} m \n")
+
+    win.fill((0, 0, 0))
+    pygame.draw.rect(win, (0, 255, 0), (x, y, width, height))
+    pygame.display.update()
+
+pygame.quit()
